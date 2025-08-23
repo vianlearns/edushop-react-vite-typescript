@@ -102,7 +102,7 @@ export default function FlashSale() {
                     {product.originalPrice}
                   </div>
                 </div>
-                <button className="w-full mt-3 btn-flash-sale">
+                <button className="w-full mt-3 bg-primary text-primary-foreground py-2 rounded-xl text-sm font-medium hover:bg-primary-dark transition-all duration-300">
                   Beli Sekarang
                 </button>
               </div>

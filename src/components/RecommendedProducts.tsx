@@ -153,20 +153,20 @@ export default function RecommendedProducts() {
                 </span>
               </div>
               
-              <div className="text-lg md:text-xl font-bold text-primary mb-3">
-                {product.price}
-              </div>
-              
-              <button className="w-full bg-gradient-to-r from-primary to-primary-dark text-primary-foreground py-2.5 rounded-xl text-sm font-semibold hover:from-primary-dark hover:to-primary transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl">
-                Beli Sekarang
-              </button>
+            <div className="text-lg md:text-xl font-bold text-primary mb-3">
+              {product.price}
+            </div>
+            
+            <button className="w-full bg-primary text-primary-foreground py-2 rounded-xl text-sm font-medium hover:bg-primary-dark transition-all duration-300">
+              Beli Sekarang
+            </button>
             </div>
           </div>
         ))}
       </div>
       
-      <div className="text-center mt-8">
-        <button className="bg-card border-2 border-primary text-primary px-8 py-3 rounded-xl font-semibold hover:bg-accent transition-all duration-300 shadow-lg hover:shadow-xl">
+      <div className="text-center mt-6">
+        <button className="bg-card border border-primary text-primary px-6 py-2 rounded-xl text-sm font-medium hover:bg-primary/5 transition-all duration-300">
           Lihat Produk Lainnya
         </button>
       </div>
