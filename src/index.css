@@ -2,95 +2,139 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* EDUSHOP Design System - All colors, gradients, fonts, etc defined here. 
+All colors MUST be HSL for consistency.
 */
 
 @layer base {
   :root {
+    /* Base Colors */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 217 19% 27%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 217 19% 27%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 217 19% 27%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Brand Colors - EDUSHOP Blue */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 217 91% 70%;
+    --primary-dark: 217 91% 50%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 13% 91%;
+    --secondary-foreground: 217 19% 27%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 13% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 217 91% 95%;
+    --accent-foreground: 217 91% 50%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Flash Sale Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --flash-sale: 339 82% 52%;
+    --flash-sale-light: 339 82% 62%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Category Colors */
+    --category-electronics: 217 91% 60%;
+    --category-fashion: 266 85% 58%;
+    --category-home: 142 71% 45%;
+    --category-beauty: 339 82% 52%;
+    --category-toys: 25 95% 53%;
+    --category-food: 174 72% 56%;
 
-    --radius: 0.5rem;
+    /* UI Elements */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
 
+    --radius: 0.75rem;
+
+    /* Hero Gradient Colors */
+    --hero-start: 258 89% 66%;
+    --hero-middle: 224 76% 48%;
+    --hero-end: 262 83% 58%;
+
+    /* Flash Sale Gradient */
+    --flash-gradient-start: 0 84% 60%;
+    --flash-gradient-end: 339 82% 52%;
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bouncy: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    /* Shadows */
+    --shadow-card: 0 4px 12px -2px hsl(217 91% 60% / 0.1);
+    --shadow-hover: 0 8px 25px -2px hsl(217 91% 60% / 0.15);
+    --shadow-flash: 0 8px 25px -2px hsl(339 82% 52% / 0.25);
+
+    /* Sidebar */
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 217 91% 60%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 217 19% 15%;
+    --foreground: 0 0% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 217 19% 18%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 217 19% 18%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 217 91% 65%;
+    --primary-foreground: 217 19% 15%;
+    --primary-light: 217 91% 75%;
+    --primary-dark: 217 91% 55%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 217 19% 25%;
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 217 19% 25%;
+    --muted-foreground: 215 16% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 217 19% 25%;
+    --accent-foreground: 217 91% 65%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 0 0% 95%;
+    --flash-sale: 339 82% 57%;
+    --flash-sale-light: 339 82% 67%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 217 19% 25%;
+    --input: 217 19% 25%;
+    --ring: 217 91% 65%;
+
+    --hero-start: 258 89% 71%;
+    --hero-middle: 224 76% 53%;
+    --hero-end: 262 83% 63%;
+
+    --flash-gradient-start: 0 84% 65%;
+    --flash-gradient-end: 339 82% 57%;
+
+    --shadow-card: 0 4px 12px -2px hsl(217 19% 10% / 0.3);
+    --shadow-hover: 0 8px 25px -2px hsl(217 19% 10% / 0.4);
+    --shadow-flash: 0 8px 25px -2px hsl(339 82% 57% / 0.3);
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-primary: 217 91% 65%;
+    --sidebar-primary-foreground: 217 19% 15%;
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 217 91% 65%;
   }
 }
 
@@ -100,6 +144,147 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-exo antialiased;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Glass Morphism Effect */
+  .glass-morphism {
+    @apply bg-white/80 backdrop-blur-lg border border-white/20;
+  }
+
+  /* Animated Background */
+  .animated-bg {
+    background: linear-gradient(135deg, 
+      hsl(var(--hero-start)), 
+      hsl(var(--hero-middle)), 
+      hsl(var(--hero-end))
+    );
+    background-size: 400% 400%;
+    animation: gradient-shift 8s ease infinite;
+  }
+
+  /* Product Card */
+  .product-card {
+    @apply bg-card border border-border/50 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden;
+  }
+
+  /* Category Card */
+  .category-card {
+    @apply bg-card border border-border/30 rounded-2xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-primary/30;
+  }
+
+  /* Pulse Glow Effect */
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+
+  /* Floating Animation */
+  .floating-animation {
+    animation: floating 6s ease-in-out infinite;
+  }
+
+  /* Button Variants */
+  .btn-hero {
+    @apply bg-white text-primary font-semibold px-8 py-3 rounded-xl hover:bg-white/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+  }
+
+  .btn-hero-outline {
+    @apply border-2 border-white text-white font-semibold px-8 py-3 rounded-xl hover:bg-white hover:text-primary transition-all duration-300 transform hover:-translate-y-0.5;
+  }
+
+  .btn-flash-sale {
+    @apply bg-gradient-to-r from-flash-sale to-flash-sale-light text-white font-semibold py-2 px-4 rounded-xl hover:shadow-flash transition-all duration-300 transform hover:-translate-y-0.5;
+  }
+
+  /* Flash Sale Gradient */
+  .flash-gradient {
+    background: linear-gradient(135deg, 
+      hsl(var(--flash-gradient-start)), 
+      hsl(var(--flash-gradient-end))
+    );
+  }
+
+  /* Line Clamp Utilities */
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+}
+
+@layer utilities {
+  /* Custom Animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  @keyframes pulse-glow {
+    0% { box-shadow: 0 0 5px hsl(var(--flash-gradient-start) / 0.5); }
+    100% { box-shadow: 0 0 20px hsl(var(--flash-gradient-start) / 0.8); }
+  }
+
+  @keyframes floating {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slide-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scale-in {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes slide-in-right {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+  }
+
+  /* Animation Classes */
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.5s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.4s ease-out forwards;
+  }
+
+  /* Category Colors */
+  .category-electronics { @apply text-white; background: linear-gradient(135deg, hsl(var(--category-electronics)), hsl(var(--category-electronics)) / 0.8); }
+  .category-fashion { @apply text-white; background: linear-gradient(135deg, hsl(var(--category-fashion)), hsl(var(--category-fashion)) / 0.8); }
+  .category-home { @apply text-white; background: linear-gradient(135deg, hsl(var(--category-home)), hsl(var(--category-home)) / 0.8); }
+  .category-beauty { @apply text-white; background: linear-gradient(135deg, hsl(var(--category-beauty)), hsl(var(--category-beauty)) / 0.8); }
+  .category-toys { @apply text-white; background: linear-gradient(135deg, hsl(var(--category-toys)), hsl(var(--category-toys)) / 0.8); }
+  .category-food { @apply text-white; background: linear-gradient(135deg, hsl(var(--category-food)), hsl(var(--category-food)) / 0.8); }
 }

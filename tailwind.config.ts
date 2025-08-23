@@ -18,6 +18,9 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'exo': ['Exo 2', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -26,7 +29,9 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					light: 'hsl(var(--primary-light))',
+					dark: 'hsl(var(--primary-dark))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -52,6 +57,23 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				'flash-sale': {
+					DEFAULT: 'hsl(var(--flash-sale))',
+					light: 'hsl(var(--flash-sale-light))'
+				},
+				'hero-gradient': {
+					start: 'hsl(var(--hero-start))',
+					middle: 'hsl(var(--hero-middle))',
+					end: 'hsl(var(--hero-end))'
+				},
+				'category': {
+					electronics: 'hsl(var(--category-electronics))',
+					fashion: 'hsl(var(--category-fashion))',
+					home: 'hsl(var(--category-home))',
+					beauty: 'hsl(var(--category-beauty))',
+					toys: 'hsl(var(--category-toys))',
+					food: 'hsl(var(--category-food))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -62,6 +84,19 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			boxShadow: {
+				'card': 'var(--shadow-card)',
+				'hover': 'var(--shadow-hover)',
+				'flash': 'var(--shadow-flash)'
+			},
+			backgroundImage: {
+				'hero-gradient': 'linear-gradient(135deg, hsl(var(--hero-start)), hsl(var(--hero-middle)), hsl(var(--hero-end)))',
+				'flash-gradient': 'linear-gradient(135deg, hsl(var(--flash-gradient-start)), hsl(var(--flash-gradient-end)))'
+			},
+			transitionTimingFunction: {
+				'smooth': 'var(--transition-smooth)',
+				'bouncy': 'var(--transition-bouncy)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
