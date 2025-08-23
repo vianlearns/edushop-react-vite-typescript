@@ -144,7 +144,8 @@ All colors MUST be HSL for consistency.
   }
 
   body {
-    @apply bg-background text-foreground font-exo antialiased;
+    @apply bg-background text-foreground;
+    font-family: 'Exo 2', sans-serif !important;
   }
 
   html {
@@ -280,11 +281,11 @@ All colors MUST be HSL for consistency.
     animation: slide-in-right 0.4s ease-out forwards;
   }
 
-  /* Category Colors */
-  .category-electronics { @apply text-white; background: linear-gradient(135deg, hsl(var(--category-electronics)), hsl(var(--category-electronics)) / 0.8); }
-  .category-fashion { @apply text-white; background: linear-gradient(135deg, hsl(var(--category-fashion)), hsl(var(--category-fashion)) / 0.8); }
-  .category-home { @apply text-white; background: linear-gradient(135deg, hsl(var(--category-home)), hsl(var(--category-home)) / 0.8); }
-  .category-beauty { @apply text-white; background: linear-gradient(135deg, hsl(var(--category-beauty)), hsl(var(--category-beauty)) / 0.8); }
-  .category-toys { @apply text-white; background: linear-gradient(135deg, hsl(var(--category-toys)), hsl(var(--category-toys)) / 0.8); }
-  .category-food { @apply text-white; background: linear-gradient(135deg, hsl(var(--category-food)), hsl(var(--category-food)) / 0.8); }
+  /* Category Colors - Made more visible */
+  .category-electronics { @apply text-white bg-blue-500; }
+  .category-fashion { @apply text-white bg-purple-500; }
+  .category-home { @apply text-white bg-green-500; }
+  .category-beauty { @apply text-white bg-pink-500; }
+  .category-toys { @apply text-white bg-orange-500; }
+  .category-food { @apply text-white bg-teal-500; }
 }

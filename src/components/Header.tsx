@@ -34,7 +34,7 @@ export default function Header() {
               <input 
                 type="text" 
                 placeholder="Cari produk, buku, atau kategori..." 
-                className="w-full py-3 pl-12 pr-4 rounded-2xl border border-border focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary bg-white/80 backdrop-blur-sm text-foreground placeholder-muted-foreground transition-all duration-300"
+                className="w-full py-3 pl-12 pr-4 rounded-2xl border border-border focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary bg-white/80 backdrop-blur-sm text-foreground placeholder-muted-foreground transition-all duration-300 font-exo"
               />
               <Search className="absolute left-4 top-3.5 h-5 w-5 text-muted-foreground" />
               <button className="absolute right-2 top-1.5 bg-primary hover:bg-primary-dark text-primary-foreground p-2 rounded-xl transition-colors duration-300">
@@ -47,10 +47,10 @@ export default function Header() {
           <div className="flex items-center gap-4">
             {/* Login/Signup */}
             <div className="hidden lg:flex items-center space-x-4">
-              <button className="text-muted-foreground hover:text-primary text-sm font-medium transition-colors duration-300">
+              <button className="text-muted-foreground hover:text-primary text-sm font-medium transition-colors duration-300 font-exo">
                 Login
               </button>
-              <button className="bg-gradient-to-r from-primary to-primary-dark text-primary-foreground px-4 py-2 rounded-xl text-sm font-medium hover:from-primary-dark hover:to-primary transition-all duration-300 shadow-lg hover:shadow-xl">
+              <button className="bg-gradient-to-r from-primary to-primary-dark text-primary-foreground px-4 py-2 rounded-xl text-sm font-medium hover:from-primary-dark hover:to-primary transition-all duration-300 shadow-lg hover:shadow-xl font-exo">
                 Daftar
               </button>
             </div>
@@ -78,7 +78,7 @@ export default function Header() {
         </div>
 
         {/* Navigation */}
-        <div className="flex space-x-8 border-t border-white/20 pt-3 pb-2">
+        <div className="flex space-x-8 border-t border-white/20 pt-3 pb-2 font-exo">
           <a href="#" className="text-primary font-semibold text-sm hover:text-primary-dark transition-colors duration-300">
             Beranda
           </a>
