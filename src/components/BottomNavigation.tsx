@@ -1,17 +1,18 @@
 "use client";
 
-import { Home, Search, ShoppingCart, User, Heart } from "lucide-react";
+import { Home, Search, ShoppingCart, User, ReceiptText } from "lucide-react";
 import { useState } from "react";
 
 export default function BottomNavigation() {
   const [activeTab, setActiveTab] = useState("home");
+  const [cartAmount, setCartAmount] = useState<number>();
 
   const navItems = [
-    { id: "home", icon: Home, label: "Beranda" },
-    { id: "search", icon: Search, label: "Cari" },
-    { id: "wishlist", icon: Heart, label: "Wishlist" },
-    { id: "cart", icon: ShoppingCart, label: "Keranjang" },
-    { id: "profile", icon: User, label: "Profil" },
+    { id: "home", icon: Home, label: "Home" },
+    { id: "search", icon: Search, label: "Search" },
+    { id: "cart", icon: ShoppingCart, label: "Cart" },
+    { id: "transactions", icon: ReceiptText, label: "Transactions" },
+    { id: "profile", icon: User, label: "Profile" },
   ];
 
   return (
@@ -33,9 +34,9 @@ export default function BottomNavigation() {
                   activeTab === item.id ? "scale-110" : ""
                 }`} 
               />
-              {item.id === "cart" && (
+              {item.id === "cart" && cartAmount && (
                 <div className="absolute -top-1 -right-1 bg-destructive text-destructive-foreground text-xs rounded-full h-4 w-4 flex items-center justify-center">
-                  3
+                  {cartAmount}
                 </div>
               )}
             </div>

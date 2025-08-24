@@ -11,8 +11,12 @@ import {
   Monitor, 
   Cloud 
 } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function PopularCategories() {
+  const [showAll, setShowAll] = useState(false);
+  const [showedCategories, setShowedCategories] = useState([]);
+  
   const categories = [
     { name: "Alat Tulis & ATK", icon: PenTool, colorClass: "category-electronics" },
     { name: "Buku & Belajar", icon: BookOpen, colorClass: "category-fashion" },
@@ -25,11 +29,20 @@ export default function PopularCategories() {
     { name: "Digital & Layanan", icon: Cloud, colorClass: "category-home" },
   ];
 
+  useEffect(() => {
+    if (showAll) setShowedCategories(categories);
+    else setShowedCategories(categories.slice(0, 6));
+  }, [showAll]);
+
+  function toggleShow() {
+    setShowAll(!showAll);
+  }
+
   return (
     <div className="mb-8 animate-slide-up">
-      <h2 className="text-xl font-exo font-bold mb-4 text-foreground">Kategori Populer</h2>
+      <h2 className="text-xl font-exo font-bold mb-4 text-foreground">Popular Categories</h2>
       <div className="grid grid-cols-3 md:grid-cols-6 gap-3 md:gap-4">
-        {categories.slice(0, 6).map((category, index) => (
+        {showedCategories.map((category, index) => (
           <div
             key={index}
             className="category-card p-3 md:p-4 text-center cursor-pointer group animate-scale-in bg-card rounded-2xl border border-border/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-primary/30"
@@ -49,8 +62,8 @@ export default function PopularCategories() {
       
       {/* View All Categories Button - matching reference image */}
       <div className="text-center mt-6">
-        <button className="bg-card border border-primary text-primary px-6 py-2 rounded-xl text-sm font-medium hover:bg-primary/5 transition-all duration-300">
-          Lihat Kategori Lainnya
+        <button onClick={toggleShow} className="bg-card border border-primary text-primary px-6 py-2 rounded-xl text-sm font-medium hover:bg-primary/5 transition-all duration-300">
+          { showAll ? 'Show Less' : 'Show All' }
         </button>
       </div>
     </div>
