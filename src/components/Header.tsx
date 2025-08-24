@@ -12,6 +12,12 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <div className="flex items-center space-x-3">
+              {/* Logo Icon */}
+              <img 
+                src="/logo.png" 
+                alt="EDUSHOP Logo" 
+                className="h-8 w-8 object-contain"
+              />
               {/* Logo Text */}
               <div className="text-2xl font-exo font-bold bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent">
                 EDUSHOP
@@ -45,12 +51,18 @@ export default function Header() {
             </div>
             {/* Login/Signup */}
             <div className="hidden md:flex items-center space-x-4">
-              <button className="text-muted-foreground hover:text-primary text-sm font-medium transition-colors duration-300 font-exo">
+              <a 
+                href="/login" 
+                className="text-muted-foreground hover:text-primary text-sm font-medium transition-colors duration-300 font-exo"
+              >
                 Login
-              </button>
-              <button className="bg-gradient-to-r from-primary to-primary-dark text-primary-foreground px-4 py-2 rounded-xl text-sm font-medium hover:from-primary-dark hover:to-primary transition-all duration-300 shadow-lg hover:shadow-xl font-exo">
-                Sign In
-              </button>
+              </a>
+              <a 
+                href="/register" 
+                className="bg-gradient-to-r from-primary to-primary-dark text-primary-foreground px-4 py-2 rounded-xl text-sm font-medium hover:from-primary-dark hover:to-primary transition-all duration-300 shadow-lg hover:shadow-xl font-exo"
+              >
+                Sign Up
+              </a>
             </div>
           </div>
         </div>
