@@ -1,10 +1,17 @@
 "use client"
 
 import { useState } from 'react'
-import { Search, ShoppingCart } from 'lucide-react'
+import { Search, ShoppingCart, User, LogOut } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { useAuth } from '@/hooks/useAuth'
 
 export default function Header() {
   const [hasCart, setCart] = useState<number>();
+  const { user, signOut } = useAuth();
+
+  const handleSignOut = async () => {
+    await signOut();
+  };
   return (
     <header className="sticky top-0 z-50 glass-morphism border-b border-white/20">
       <div className="container mx-auto px-4">
@@ -49,20 +56,40 @@ export default function Header() {
                 { hasCart && (<span className="absolute -top-1 -right-1 bg-gradient-to-r from-destructive to-flash-sale text-destructive-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium pulse-glow">{hasCart}</span>) }
               </button>
             </div>
-            {/* Login/Signup */}
+            {/* Login/Signup or User Profile */}
             <div className="hidden md:flex items-center space-x-4">
-              <a 
-                href="/login" 
-                className="text-muted-foreground hover:text-primary text-sm font-medium transition-colors duration-300 font-exo"
-              >
-                Login
-              </a>
-              <a 
-                href="/register" 
-                className="bg-gradient-to-r from-primary to-primary-dark text-primary-foreground px-4 py-2 rounded-xl text-sm font-medium hover:from-primary-dark hover:to-primary transition-all duration-300 shadow-lg hover:shadow-xl font-exo"
-              >
-                Sign Up
-              </a>
+              {user ? (
+                <div className="flex items-center space-x-3">
+                  <div className="flex items-center space-x-2 text-sm">
+                    <User className="h-4 w-4 text-primary" />
+                    <span className="text-foreground font-medium font-exo">
+                      {user.email?.split('@')[0]}
+                    </span>
+                  </div>
+                  <button
+                    onClick={handleSignOut}
+                    className="flex items-center space-x-1 text-muted-foreground hover:text-primary text-sm font-medium transition-colors duration-300 font-exo"
+                  >
+                    <LogOut className="h-4 w-4" />
+                    <span>Keluar</span>
+                  </button>
+                </div>
+              ) : (
+                <>
+                  <Link 
+                    to="/login" 
+                    className="text-muted-foreground hover:text-primary text-sm font-medium transition-colors duration-300 font-exo"
+                  >
+                    Login
+                  </Link>
+                  <Link 
+                    to="/register" 
+                    className="bg-gradient-to-r from-primary to-primary-dark text-primary-foreground px-4 py-2 rounded-xl text-sm font-medium hover:from-primary-dark hover:to-primary transition-all duration-300 shadow-lg hover:shadow-xl font-exo"
+                  >
+                    Sign Up
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         </div>
