@@ -9,6 +9,7 @@ import Header from "./components/Header";
 import BottomNavigation from "./components/BottomNavigation";
 import LoginPage from "./pages/Auth/Login";
 import RegisterPage from "./pages/Auth/Register";
+import CartPage from "./pages/Cart";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
+            <Route path="/keranjang" element={<CartPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <BottomNavigation />

@@ -51,10 +51,10 @@ export default function Header() {
           <div className="flex items-center gap-4 max-md:hidden">
             {/* Cart with Badge */}
             <div className="relative">
-              <button className="text-muted-foreground hover:text-primary p-2 rounded-xl hover:bg-accent transition-all duration-300 group">
+              <Link to="/keranjang" className="text-muted-foreground hover:text-primary p-2 rounded-xl hover:bg-accent transition-all duration-300 group">
                 <ShoppingCart className="h-6 w-6" />
                 { hasCart && (<span className="absolute -top-1 -right-1 bg-gradient-to-r from-destructive to-flash-sale text-destructive-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium pulse-glow">{hasCart}</span>) }
-              </button>
+              </Link>
             </div>
             {/* Login/Signup or User Profile */}
             <div className="hidden md:flex items-center space-x-4">
