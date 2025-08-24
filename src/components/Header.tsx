@@ -63,7 +63,7 @@ export default function Header() {
                   <div className="flex items-center space-x-2 text-sm">
                     <User className="h-4 w-4 text-primary" />
                     <span className="text-foreground font-medium font-exo">
-                      {user.email?.split('@')[0]}
+                      {user.user_metadata?.full_name || user.email?.split('@')[0]}
                     </span>
                   </div>
                   <button

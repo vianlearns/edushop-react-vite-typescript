@@ -103,9 +103,9 @@ export default function RecommendedProducts() {
 
   return (
     <div className="mb-8 animate-slide-up">
-      <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl font-exo font-bold text-foreground">Rekomendasi Untukmu</h2>
-        <p className="text-muted-foreground">Produk pilihan terbaik yang dipersonalisasi khusus untuk kebutuhan Anda</p>
+      <div className="mb-4 md:mb-6">
+        <h2 className="text-xl md:text-2xl font-exo font-bold text-foreground mb-2">Rekomendasi Untukmu</h2>
+        <p className="text-sm md:text-base text-muted-foreground">Produk pilihan terbaik yang dipersonalisasi khusus untuk kebutuhan Anda</p>
       </div>
       
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
@@ -115,49 +115,49 @@ export default function RecommendedProducts() {
             className="product-card group cursor-pointer animate-scale-in"
             style={{animationDelay: `${index * 0.1}s`}}
           >
-            <div className="relative overflow-hidden rounded-2xl">
+            <div className="relative overflow-hidden rounded-xl md:rounded-2xl">
               <img 
                 src={product.image} 
                 alt={product.name} 
-                className="w-full h-40 md:h-48 object-cover group-hover:scale-110 transition-transform duration-500" 
+                className="w-full h-32 md:h-48 object-cover group-hover:scale-110 transition-transform duration-500" 
               />
               
               {/* Wishlist Button */}
-              <button className="absolute top-3 right-3 p-2 rounded-full bg-white/90 backdrop-blur-sm shadow-lg hover:bg-white transition-all duration-300 group">
-                <Heart className={`h-4 w-4 ${product.isWishlisted ? 'text-destructive fill-destructive' : 'text-muted-foreground'} group-hover:scale-110 transition-transform duration-300`} />
+              <button className="absolute top-2 right-2 p-1.5 md:p-2 rounded-full bg-white/90 backdrop-blur-sm shadow-lg hover:bg-white transition-all duration-300 group">
+                <Heart className={`h-3 w-3 md:h-4 md:w-4 ${product.isWishlisted ? 'text-destructive fill-destructive' : 'text-muted-foreground'} group-hover:scale-110 transition-transform duration-300`} />
               </button>
               
-              {/* Quick Add to Cart */}
-              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              {/* Quick Add to Cart - Hide on mobile */}
+              <div className="hidden md:flex absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 items-center justify-center">
                 <button className="bg-white text-foreground px-4 py-2 rounded-xl font-semibold hover:bg-accent transition-colors duration-300 transform translate-y-4 group-hover:translate-y-0 flex items-center gap-2">
                   <ShoppingCart className="h-4 w-4" />
-                  <span className="hidden md:inline">Tambah</span>
+                  <span>Tambah</span>
                 </button>
               </div>
             </div>
             
-            <div className="p-4">
-              <h3 className="text-sm md:text-base font-exo font-semibold text-card-foreground line-clamp-1 mb-2 group-hover:text-primary transition-colors duration-300">
-                {product.name}
+            <div className="p-2 md:p-4">
+              <h3 className="text-xs md:text-base font-exo font-semibold text-card-foreground mb-1 md:mb-2 group-hover:text-primary transition-colors duration-300 leading-tight">
+                <span className="line-clamp-2 md:line-clamp-1">{product.name}</span>
               </h3>
               
-              <div className="flex items-center gap-1 mb-2">
+              <div className="flex items-center gap-1 mb-1 md:mb-2">
                 <div className="flex">
                   {renderStars(product.rating)}
                 </div>
-                <span className="text-sm text-muted-foreground ml-1">
+                <span className="text-xs md:text-sm text-muted-foreground ml-1">
                   {product.rating}
                 </span>
-                <span className="text-xs text-muted-foreground">
+                <span className="text-xs text-muted-foreground hidden md:inline">
                   ({product.reviews})
                 </span>
               </div>
               
-            <div className="text-lg md:text-xl font-bold text-primary mb-3">
+            <div className="text-sm md:text-xl font-bold text-primary mb-2 md:mb-3">
               {product.price}
             </div>
             
-            <button className="w-full bg-primary text-primary-foreground py-2 rounded-xl text-sm font-medium hover:bg-primary-dark transition-all duration-300">
+            <button className="w-full bg-primary text-primary-foreground py-1.5 md:py-2 rounded-lg md:rounded-xl text-xs md:text-sm font-medium hover:bg-primary-dark transition-all duration-300">
               Beli Sekarang
             </button>
             </div>
