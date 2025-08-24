@@ -46,7 +46,7 @@ export default function PopularCategories() {
           <div
             key={index}
             className="category-card p-3 md:p-4 text-center cursor-pointer group animate-scale-in bg-card rounded-2xl border border-border/30 hover:shadow-lg transition-all duration-150 hover:-translate-y-1 hover:border-primary/30"
-            style={{animationDelay: `${index * 0.005}s`}}
+            style={{animationDelay: `${index * 0.01}s`}}
           >
             <div className="w-12 h-12 md:w-14 md:h-14 mx-auto mb-2 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
               <div className={`${category.colorClass} p-2 rounded-xl shadow-lg`}>
@@ -70,3 +70,4 @@ export default function PopularCategories() {
   );
 
 }
+
